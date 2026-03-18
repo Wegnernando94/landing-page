@@ -5,19 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fernando Wegner - Portfólio QA</title>
 
-    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
-
-    <link rel="icon" type="image/png" sizes="32x32" href="apple-icon-72x72.png"> <link rel="apple-touch-icon-precomposed" href="apple-icon-precomposed.png">
-    <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: #333; }
+        .resume-container { max-width: 900px; margin: 30px auto; background: #fff; border-radius: 10px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #2c5364 0%, #203a43 60%, #0f2027 100%); color: #fff; padding: 36px 40px 28px; }
+        .header h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: 1px; }
+        .header .title { font-size: 1.05rem; color: #a8d8ea; margin: 6px 0 16px; letter-spacing: 2px; text-transform: uppercase; }
+        .contact { display: flex; flex-wrap: wrap; gap: 12px 28px; font-size: 0.88rem; opacity: 0.92; }
+        .contact div { display: flex; align-items: center; gap: 7px; }
+        .content { padding: 30px 40px 40px; }
+        .section { margin-bottom: 28px; }
+        .section-title { font-size: 1.08rem; font-weight: 700; color: #2c5364; border-bottom: 2px solid #2c5364; padding-bottom: 6px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 9px; }
+        .summary p { font-size: 0.93rem; line-height: 1.7; margin-bottom: 8px; color: #444; }
+        .metrics { background: #f6f9fb; border-radius: 8px; padding: 18px 20px 14px; border: 1px solid #dde6ed; }
+        .metrics h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #2c5364; margin-bottom: 14px; font-weight: 700; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .metric-item { display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 8px; padding: 14px 8px 10px; border: 1px solid #dde6ed; text-align: center; gap: 8px; }
+        .metric-icon { font-size: 1.5rem; color: #2c5364; }
+        .metric-label { font-size: 0.78rem; color: #555; font-weight: 600; }
+        .experience-item, .education-item { margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid #edf2f7; }
+        .experience-item:last-child, .education-item:last-child { border-bottom: none; margin-bottom: 0; }
+        .item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+        .item-title { font-size: 1rem; font-weight: 700; color: #1a2e3b; }
+        .company { font-size: 0.9rem; color: #2c5364; font-weight: 600; }
+        .period { font-size: 0.82rem; color: #888; white-space: nowrap; margin-left: 12px; padding-top: 2px; }
+        .description { font-size: 0.88rem; color: #555; margin-bottom: 8px; line-height: 1.6; }
+        .achievements { list-style: none; padding: 0; }
+        .achievements li { font-size: 0.87rem; color: #444; line-height: 1.65; padding: 3px 0 3px 18px; position: relative; }
+        .achievements li::before { content: "▸"; color: #2c5364; position: absolute; left: 0; font-size: 0.85rem; }
+        .certifications { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        .cert-item { background: #f6f9fb; border: 1px solid #dde6ed; border-radius: 6px; padding: 12px 10px; text-align: center; }
+        .cert-item h4 { font-size: 0.8rem; color: #2c5364; font-weight: 600; }
+        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .skill-category { background: #f6f9fb; border-radius: 8px; padding: 14px 16px; border: 1px solid #dde6ed; }
+        .skill-category h4 { font-size: 0.82rem; font-weight: 700; color: #2c5364; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .skill-category ul { list-style: none; padding: 0; }
+        .skill-category ul li { font-size: 0.84rem; color: #555; padding: 2px 0; }
+        .badge-new { display: inline-block; background: #2c5364; color: #fff; font-size: 0.68rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; margin-left: 8px; vertical-align: middle; letter-spacing: 0.5px; text-transform: uppercase; }
+        @media print {
+            body { background: white; }
+            .resume-container { box-shadow: none; margin: 0; border-radius: 0; }
+            #download-pdf-btn { display: none !important; }
+        }
+        @media (max-width: 600px) {
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .certifications { grid-template-columns: repeat(2, 1fr); }
+            .skills-grid { grid-template-columns: 1fr; }
+            .content { padding: 18px 14px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -37,8 +75,8 @@
             <div class="section">
                 <h2 class="section-title"><i class="fa-solid fa-user-tie"></i> Resumo Profissional</h2>
                 <div class="summary">
-                    <p>Analista de Qualidade de Software com sólida experiência em garantir a excelência de produtos , atualmente QA Pleno na Acom Sistemas. Anteriormente QA Pleno na Vivensis , onde fui responsável por aplicar técnicas avançadas de testes manuais e automatizados , desde a análise de requisitos até a validação final.</p>
-                    <p>Especialista na automação de testes ponta a ponta , análise de performance e testes de carga e estresse. Minha atuação inclui a integração de práticas de qualidade em pipelines de CI/CD e o monitoramento de ambientes em produção , sempre com foco na melhoria contínua  e em entregas de alto valor.</p>
+                    <p>Analista de Qualidade de Software com sólida experiência em garantir a excelência de produtos, atualmente QA Engineer na UEX Tecnologia. Anteriormente QA Pleno na Acom Sistemas e Vivensis, onde foi responsável por aplicar técnicas avançadas de testes manuais e automatizados, desde a análise de requisitos até a validação final.</p>
+                    <p>Especialista na automação de testes ponta a ponta, análise de performance e testes de carga e estresse. Atuação inclui a integração de práticas de qualidade em pipelines de CI/CD e o monitoramento de ambientes em produção, sempre com foco na melhoria contínua e em entregas de alto valor.</p>
                 </div>
             </div>
 
@@ -56,7 +94,7 @@
                         </div>
                         <div class="metric-item">
                             <div class="metric-icon"><i class="fa-solid fa-code-branch"></i></div>
-                            <div class="metric-label">CI/CD & DevOps </div>
+                            <div class="metric-label">CI/CD & DevOps</div>
                         </div>
                         <div class="metric-item">
                             <div class="metric-icon"><i class="fa-solid fa-chart-line"></i></div>
@@ -68,7 +106,32 @@
 
             <div class="section">
                 <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Experiência Profissional</h2>
-                
+
+                <!-- NOVA EMPRESA -->
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">QA Engineer <span class="badge-new">Atual</span></div>
+                            <div class="company">UEX Tecnologia · Tempo integral</div>
+                        </div>
+                        <div class="period">Jan 2026 - o momento</div>
+                    </div>
+                    <div class="description">
+                        Atuação sênior na engenharia de qualidade, liderando iniciativas estratégicas de automação, cobertura de testes e governança de qualidade em produtos de alto impacto.
+                    </div>
+                    <ul class="achievements">
+                        <li>Liderança técnica no mapeamento e implementação de novas features, atuando desde a análise de requisitos e regras de negócio até a validação em produção.</li>
+                        <li>Implementação e evolução de suítes de testes automatizados utilizando o framework PEST PHP, garantindo cobertura robusta em aplicações back-end.</li>
+                        <li>Aplicação de Contract Testing com PACT para validação de contratos entre microsserviços, garantindo consistência nas integrações entre consumidores e provedores.</li>
+                        <li>Monitoramento e análise de cobertura de testes, identificando gaps críticos e propondo estratégias de expansão alinhadas às metas de qualidade do produto.</li>
+                        <li>Colaboração direta com liderança técnica e de produto na definição de critérios de aceite, DoD (Definition of Done) e estratégias de teste por sprint.</li>
+                        <li>Participação ativa em cerimônias ágeis (refinamento, planning, review e retrospectiva), contribuindo com uma visão orientada à qualidade em todo o ciclo de desenvolvimento.</li>
+                        <li>Revisão e fortalecimento de processos de QA no pipeline de CI/CD, assegurando execução automática de testes a cada deploy e reduzindo regressões em produção.</li>
+                        <li>Disseminação de cultura de qualidade no time, realizando code reviews orientados a testes, workshops internos e documentação de boas práticas.</li>
+                        <li>Análise e rastreabilidade de bugs críticos, priorizando junto ao time de engenharia a resolução com base em impacto no negócio.</li>
+                    </ul>
+                </div>
+
                 <div class="experience-item">
                     <div class="item-header">
                         <div>
@@ -120,7 +183,7 @@
                         </div>
                         <div class="period">Mai 2022 - Dez 2023</div>
                     </div>
-                     <ul class="achievements">
+                    <ul class="achievements">
                         <li>Condução de testes manuais em colaboração com clientes finais para identificação e resolução de bugs.</li>
                         <li>Utilização de bancos de dados (SQL) para corrigir bugs no lado do cliente.</li>
                         <li>Design e personalização de sites para clientes finais na plataforma Nopcommerce.</li>
@@ -129,7 +192,7 @@
                         <li>Atuação com SQL, Delphi, DataSnap, Stored Procedure, C# e Nopcommerce.</li>
                     </ul>
                 </div>
-                
+
                 <div class="experience-item">
                     <div class="item-header">
                         <div>
@@ -138,22 +201,21 @@
                         </div>
                         <div class="period">Dez 2022 - Mar 2023</div>
                     </div>
-                     <ul class="achievements">
+                    <ul class="achievements">
                         <li>Utilização de SQL Server para atualizações e ajustes no servidor local do cliente.</li>
                         <li>Atuação com sistemas para cartórios extrajudiciais, repassando mudanças do TJ.</li>
                         <li>Monitoramento e verificação do sistema após atualizações.</li>
                     </ul>
                 </div>
-
-
+            </div>
 
             <div class="section">
                 <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Formação Acadêmica</h2>
-                
+
                 <div class="education-item">
                     <div class="item-header">
                         <div>
-                            <div class="item-title">Pós-graduação em Cloud computing</div>
+                            <div class="item-title">Pós-graduação em Cloud Computing</div>
                             <div class="company">Unama</div>
                         </div>
                         <div class="period">2025 - 2026</div>
@@ -176,18 +238,10 @@
             <div class="section">
                 <h2 class="section-title"><i class="fa-solid fa-award"></i> Certificações</h2>
                 <div class="certifications">
-                    <div class="cert-item">
-                        <h4>Git & Github</h4>
-                    </div>
-                    <div class="cert-item">
-                        <h4>Lógica De programação</h4>
-                    </div>
-                    <div class="cert-item">
-                        <h4>Cypress</h4>
-                    </div>
-                    <div class="cert-item">
-                        <h4>MultiCloud,DevOps e IA</h4>
-                    </div>
+                    <div class="cert-item"><h4>Git & Github</h4></div>
+                    <div class="cert-item"><h4>Lógica de Programação</h4></div>
+                    <div class="cert-item"><h4>Cypress</h4></div>
+                    <div class="cert-item"><h4>MultiCloud, DevOps e IA</h4></div>
                 </div>
             </div>
 
@@ -198,19 +252,21 @@
                         <h4>Automação & Testes E2E</h4>
                         <ul>
                             <li>Cypress</li>
-                            <li>Testcomplete</li>
+                            <li>TestComplete</li>
                             <li>Appium</li>
                             <li>Playwright</li>
+                            <li>PEST PHP</li>
                         </ul>
                     </div>
                     <div class="skill-category">
                         <h4>Testes de API & Performance</h4>
                         <ul>
                             <li>Postman</li>
-                            <li>Jmeter</li>
+                            <li>JMeter</li>
                             <li>K6</li>
                             <li>Swagger</li>
-                            <li>SoapUi</li>
+                            <li>SoapUI</li>
+                            <li>PACT (Contract Testing)</li>
                         </ul>
                     </div>
                     <div class="skill-category">
@@ -240,8 +296,9 @@
                             <li>JavaScript</li>
                             <li>TypeScript</li>
                             <li>Java</li>
-                            <li>SQL / Mysql</li>
-                            <li>Postgree</li>
+                            <li>PHP</li>
+                            <li>SQL / MySQL</li>
+                            <li>PostgreSQL</li>
                         </ul>
                     </div>
                     <div class="skill-category">
@@ -250,60 +307,32 @@
                             <li>Jira</li>
                             <li>Metodologias Ágeis</li>
                             <li>Nopcommerce</li>
+                            <li>Contract Testing</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-</div>
+    </div>
 
     <script>
-        // Função para gerar PDF (chama a impressão do navegador)
-        function generatePDF() {
-            window.print();
-        }
-
-        // Adiciona o botão de download à página
-        if (!window.matchMedia('print').matches) {
-            document.addEventListener('DOMContentLoaded', function() {
-                const button = document.createElement('button');
-                
-                // Adiciona um ID para podermos escondê-lo na impressão
-                button.id = 'download-pdf-btn'; 
-                
-                // Adiciona o ícone que já estamos usando
-                button.innerHTML = '<i class="fa-solid fa-file-arrow-down"></i> Baixar PDF'; 
-                
-                // Estiliza o botão
-                button.style.cssText = `
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    background: #2c5364; /* Cor principal do seu cabeçalho */
-                    color: white;
-                    border: none;
-                    padding: 12px 20px;
-                    border-radius: 8px;
-                    cursor: pointer;
-                    font-size: 14px;
-                    font-weight: 600;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-                    z-index: 1000;
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                    font-family: 'Arial', sans-serif;
-                `;
-                
-                // Adiciona a ação de clique
-                button.onclick = generatePDF;
-                
-                // Coloca o botão no corpo da página
-                document.body.appendChild(button);
-            });
-        }
+        function generatePDF() { window.print(); }
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.createElement('button');
+            button.id = 'download-pdf-btn';
+            button.innerHTML = '<i class="fa-solid fa-file-arrow-down"></i> Baixar PDF';
+            button.style.cssText = `
+                position: fixed; top: 20px; right: 20px;
+                background: #2c5364; color: white; border: none;
+                padding: 12px 20px; border-radius: 8px; cursor: pointer;
+                font-size: 14px; font-weight: 600;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 1000;
+                display: flex; align-items: center; gap: 8px;
+                font-family: 'Segoe UI', Arial, sans-serif;
+            `;
+            button.onclick = generatePDF;
+            document.body.appendChild(button);
+        });
     </script>
-    </body>
-</html>
 </body>
 </html>
