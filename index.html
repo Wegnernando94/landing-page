@@ -1,338 +1,805 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fernando Wegner - Portfólio QA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fernando Wegner — QA Engineer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%232c5364'/%3E%3Cstop offset='100%25' style='stop-color:%230f2027'/%3E%3C/linearGradient%3E%3ClinearGradient id='acc' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' style='stop-color:%23a8d8ea'/%3E%3Cstop offset='100%25' style='stop-color:%236bbfd8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23bg)'/%3E%3Cpolyline points='6,18 6,6 18,6' fill='none' stroke='%23a8d8ea' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.7'/%3E%3Cpolyline points='46,6 58,6 58,18' fill='none' stroke='%23a8d8ea' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.7'/%3E%3Cpolyline points='6,46 6,58 18,58' fill='none' stroke='%23a8d8ea' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.7'/%3E%3Cpolyline points='46,58 58,58 58,46' fill='none' stroke='%23a8d8ea' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.7'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' font-weight='700' text-anchor='middle' fill='url(%23acc)' letter-spacing='1'%3EFW%3C/text%3E%3Ccircle cx='32' cy='54' r='2.2' fill='%23a8d8ea' opacity='0.5'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: #333; }
-        .resume-container { max-width: 900px; margin: 30px auto; background: #fff; border-radius: 10px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); overflow: hidden; }
-        .header { background: linear-gradient(135deg, #2c5364 0%, #203a43 60%, #0f2027 100%); color: #fff; padding: 36px 40px 28px; }
-        .header h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: 1px; }
-        .header .title { font-size: 1.05rem; color: #a8d8ea; margin: 6px 0 16px; letter-spacing: 2px; text-transform: uppercase; }
-        .contact { display: flex; flex-wrap: wrap; gap: 12px 28px; font-size: 0.88rem; opacity: 0.92; }
-        .contact div { display: flex; align-items: center; gap: 7px; }
-        .content { padding: 30px 40px 40px; }
-        .section { margin-bottom: 28px; }
-        .section-title { font-size: 1.08rem; font-weight: 700; color: #2c5364; border-bottom: 2px solid #2c5364; padding-bottom: 6px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 9px; }
-        .summary p { font-size: 0.93rem; line-height: 1.7; margin-bottom: 8px; color: #444; }
-        .metrics { background: #f6f9fb; border-radius: 8px; padding: 18px 20px 14px; border: 1px solid #dde6ed; }
-        .metrics h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #2c5364; margin-bottom: 14px; font-weight: 700; }
-        .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-        .metric-item { display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 8px; padding: 14px 8px 10px; border: 1px solid #dde6ed; text-align: center; gap: 8px; }
-        .metric-icon { font-size: 1.5rem; color: #2c5364; }
-        .metric-label { font-size: 0.78rem; color: #555; font-weight: 600; }
-        .experience-item, .education-item { margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid #edf2f7; }
-        .experience-item:last-child, .education-item:last-child { border-bottom: none; margin-bottom: 0; }
-        .item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
-        .item-title { font-size: 1rem; font-weight: 700; color: #1a2e3b; }
-        .company { font-size: 0.9rem; color: #2c5364; font-weight: 600; }
-        .period { font-size: 0.82rem; color: #888; white-space: nowrap; margin-left: 12px; padding-top: 2px; }
-        .description { font-size: 0.88rem; color: #555; margin-bottom: 8px; line-height: 1.6; }
-        .achievements { list-style: none; padding: 0; }
-        .achievements li { font-size: 0.87rem; color: #444; line-height: 1.65; padding: 3px 0 3px 18px; position: relative; }
-        .achievements li::before { content: "▸"; color: #2c5364; position: absolute; left: 0; font-size: 0.85rem; }
-        .certifications { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-        .cert-item { background: #f6f9fb; border: 1px solid #dde6ed; border-radius: 6px; padding: 12px 10px; text-align: center; }
-        .cert-item h4 { font-size: 0.8rem; color: #2c5364; font-weight: 600; }
-        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-        .skill-category { background: #f6f9fb; border-radius: 8px; padding: 14px 16px; border: 1px solid #dde6ed; }
-        .skill-category h4 { font-size: 0.82rem; font-weight: 700; color: #2c5364; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .skill-category ul { list-style: none; padding: 0; }
-        .skill-category ul li { font-size: 0.84rem; color: #555; padding: 2px 0; }
-        .badge-new { display: inline-block; background: #2c5364; color: #fff; font-size: 0.68rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; margin-left: 8px; vertical-align: middle; letter-spacing: 0.5px; text-transform: uppercase; }
-        @media print {
-            body { background: white; }
-            .resume-container { box-shadow: none; margin: 0; border-radius: 0; }
-            #download-pdf-btn { display: none !important; }
-        }
-        @media (max-width: 600px) {
-            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-            .certifications { grid-template-columns: repeat(2, 1fr); }
-            .skills-grid { grid-template-columns: 1fr; }
-            .content { padding: 18px 14px; }
-        }
-    </style>
+  <style>
+    :root {
+      --dark:        #0b1520;
+      --dark-2:      #152030;
+      --dark-3:      #1e3040;
+      --accent:      #4fc3f7;
+      --accent-dim:  #29b6f6;
+      --accent-glow: rgba(79,195,247,0.15);
+      --text:        #1e293b;
+      --text-light:  #64748b;
+      --text-lighter:#94a3b8;
+      --bg:          #f8fafc;
+      --bg-card:     #ffffff;
+      --border:      #e2e8f0;
+      --border-strong:#cbd5e1;
+      --green:  #10b981; --green-bg:  #d1fae5;
+      --blue:   #3b82f6; --blue-bg:   #dbeafe;
+      --purple: #8b5cf6; --purple-bg: #ede9fe;
+      --orange: #f97316; --orange-bg: #ffedd5;
+      --red:    #ef4444; --red-bg:    #fee2e2;
+      --teal:   #14b8a6; --teal-bg:   #ccfbf1;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ANIMATE-IN — starts visible, JS adds animation only if supported */
+    .anim {
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .anim.out {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .anim.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* PAGE */
+    .page { max-width:860px; margin:0 auto; padding:32px 16px 72px; }
+
+    /* ── HEADER ── */
+    .header {
+      background: var(--dark);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 24px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.32);
+    }
+    .hdr-grid {
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(rgba(79,195,247,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79,195,247,0.045) 1px, transparent 1px);
+      background-size: 42px 42px;
+      pointer-events:none;
+    }
+    .hdr-glow {
+      position:absolute; top:-90px; left:-90px;
+      width:380px; height:380px;
+      background:radial-gradient(circle, rgba(79,195,247,0.13) 0%, transparent 65%);
+      pointer-events:none;
+    }
+    .hdr-glow2 {
+      position:absolute; bottom:-70px; right:-70px;
+      width:300px; height:300px;
+      background:radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 65%);
+      pointer-events:none;
+    }
+    .hdr-inner { position:relative; z-index:1; padding:44px 48px 36px; }
+
+    .hdr-eyebrow {
+      font-size:0.7rem; font-weight:600; letter-spacing:3.5px;
+      text-transform:uppercase; color:var(--accent);
+      display:flex; align-items:center; gap:8px; margin-bottom:12px;
+    }
+    .hdr-eyebrow::before {
+      content:''; display:inline-block;
+      width:26px; height:1.5px; background:var(--accent);
+    }
+    .hdr-name {
+      font-family:'Syne',sans-serif;
+      font-size:2.6rem; font-weight:800;
+      color:#fff; letter-spacing:-1px; line-height:1.2;
+      padding-bottom:4px; overflow:visible;
+    }
+    .hdr-name span { color:var(--accent); }
+    .hdr-subtitle {
+      font-size:0.88rem; color:rgba(255,255,255,0.38);
+      margin-top:10px; letter-spacing:0.5px;
+    }
+
+    .hdr-badges {
+      display:flex; flex-wrap:wrap; gap:8px; margin-top:24px;
+    }
+    .hdr-badge {
+      display:flex; align-items:center; gap:6px;
+      background:rgba(255,255,255,0.055);
+      border:1px solid rgba(255,255,255,0.09);
+      border-radius:100px; padding:6px 14px;
+      font-size:0.77rem; color:rgba(255,255,255,0.65);
+      transition:all 0.22s;
+    }
+    .hdr-badge:hover {
+      background:rgba(79,195,247,0.12);
+      border-color:rgba(79,195,247,0.28);
+      color:var(--accent);
+    }
+    .hdr-badge i { font-size:0.7rem; color:var(--accent); }
+
+    .hdr-divider {
+      height:1px;
+      background:linear-gradient(90deg, rgba(79,195,247,0.22), transparent);
+      margin: 26px 0 22px;
+    }
+    .hdr-contact { display:flex; flex-wrap:wrap; gap:18px; }
+    .contact-item {
+      display:flex; align-items:center; gap:8px;
+      font-size:0.81rem; color:rgba(255,255,255,0.5);
+      transition:color 0.2s;
+    }
+    .contact-item:hover { color:var(--accent); }
+    .contact-item i { color:var(--accent); font-size:0.76rem; }
+
+    /* ── SECTION ── */
+    .section { margin-bottom:28px; }
+    .sec-hdr {
+      display:flex; align-items:center; gap:12px; margin-bottom:18px;
+    }
+    .sec-icon {
+      width:34px; height:34px; border-radius:10px;
+      background:var(--dark); display:flex;
+      align-items:center; justify-content:center;
+      color:var(--accent); font-size:0.82rem; flex-shrink:0;
+    }
+    .sec-title {
+      font-family:'Syne',sans-serif;
+      font-size:0.98rem; font-weight:700; color:var(--text);
+    }
+    .sec-line { flex:1; height:1px; background:var(--border); }
+
+    /* ── SUMMARY ── */
+    .summary-card {
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:14px; padding:22px 24px;
+      position:relative; overflow:hidden;
+    }
+    .summary-card::before {
+      content:''; position:absolute; left:0; top:0; bottom:0;
+      width:3px;
+      background:linear-gradient(180deg, var(--accent), #6366f1);
+      border-radius:3px 0 0 3px;
+    }
+    .summary-card p {
+      font-size:0.88rem; line-height:1.78;
+      color:var(--text-light); margin-bottom:9px;
+    }
+    .summary-card p:last-child { margin-bottom:0; }
+
+    /* ── FOCUS CARDS ── */
+    .focus-grid {
+      display:grid; grid-template-columns:repeat(4,1fr); gap:12px;
+    }
+    .focus-card {
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:14px; padding:18px 10px;
+      text-align:center; transition:all 0.25s; cursor:default;
+    }
+    .focus-card:hover {
+      border-color:var(--accent);
+      box-shadow:0 0 0 4px var(--accent-glow), 0 8px 22px rgba(0,0,0,0.06);
+      transform:translateY(-3px);
+    }
+    .focus-card:hover .focus-icon { color:var(--accent); }
+    .focus-icon {
+      font-size:1.35rem; color:#334155;
+      margin-bottom:10px; transition:color 0.25s;
+    }
+    .focus-label {
+      font-size:0.74rem; font-weight:600;
+      color:var(--text-light); line-height:1.35;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline { position:relative; padding-left:30px; }
+    .timeline::before {
+      content:''; position:absolute;
+      left:8px; top:10px; bottom:10px;
+      width:1.5px;
+      background:linear-gradient(180deg, var(--accent) 0%, var(--border) 100%);
+    }
+    .tl-item { position:relative; margin-bottom:24px; }
+    .tl-item:last-child { margin-bottom:0; }
+    .tl-dot {
+      position:absolute; left:-26px; top:8px;
+      width:13px; height:13px; border-radius:50%;
+      background:var(--bg-card); border:2px solid var(--border-strong);
+      z-index:1;
+    }
+    .tl-item.active .tl-dot {
+      background:var(--accent); border-color:var(--accent);
+      box-shadow:0 0 0 4px rgba(79,195,247,0.2);
+    }
+
+    .tl-card {
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:14px; padding:20px 22px;
+      transition:border-color 0.25s, box-shadow 0.25s;
+    }
+    .tl-card:hover {
+      border-color:var(--border-strong);
+      box-shadow:0 4px 18px rgba(0,0,0,0.06);
+    }
+    .tl-item.active .tl-card {
+      border-color:rgba(79,195,247,0.22);
+      background:linear-gradient(135deg, rgba(79,195,247,0.025), #fff);
+    }
+
+    .tl-head {
+      display:flex; justify-content:space-between;
+      align-items:flex-start; gap:10px;
+      margin-bottom:6px; flex-wrap:wrap;
+    }
+    .job-title {
+      font-family:'Syne',sans-serif;
+      font-size:0.96rem; font-weight:700; color:var(--text);
+      display:flex; align-items:center; gap:8px;
+    }
+    .badge-current {
+      display:inline-flex; align-items:center; gap:4px;
+      background:var(--green-bg); color:var(--green);
+      font-size:0.62rem; font-weight:700;
+      padding:2px 8px; border-radius:100px;
+      letter-spacing:0.5px; text-transform:uppercase;
+    }
+    .badge-current::before {
+      content:''; width:5px; height:5px;
+      background:var(--green); border-radius:50%;
+      animation:blink 2s infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+
+    .company-name {
+      font-size:0.82rem; font-weight:600; color:var(--accent-dim);
+    }
+    .period-pill {
+      font-size:0.73rem; color:var(--text-lighter);
+      background:var(--bg); border:1px solid var(--border);
+      padding:3px 10px; border-radius:100px;
+      white-space:nowrap; flex-shrink:0;
+    }
+    .job-desc {
+      font-size:0.83rem; color:var(--text-light);
+      line-height:1.65; margin:10px 0 12px;
+      padding-bottom:12px; border-bottom:1px solid var(--border);
+    }
+    .achievements { list-style:none; padding:0; display:flex; flex-direction:column; gap:5px; }
+    .achievements li {
+      font-size:0.82rem; color:var(--text-light);
+      line-height:1.6; padding-left:16px; position:relative;
+    }
+    .achievements li::before {
+      content:''; position:absolute; left:0; top:8px;
+      width:5px; height:5px; border-radius:50%;
+      background:var(--accent); opacity:0.55;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .edu-card {
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:14px; padding:18px 20px;
+      transition:border-color 0.25s, box-shadow 0.25s;
+    }
+    .edu-card:hover {
+      border-color:var(--border-strong);
+      box-shadow:0 4px 14px rgba(0,0,0,0.05);
+    }
+    .edu-degree {
+      font-family:'Syne',sans-serif;
+      font-size:0.87rem; font-weight:700; color:var(--text);
+      margin-bottom:4px; line-height:1.4;
+    }
+    .edu-school {
+      font-size:0.79rem; font-weight:600;
+      color:var(--accent-dim); margin-bottom:10px;
+    }
+    .edu-foot { display:flex; align-items:center; justify-content:space-between; }
+    .edu-period { font-size:0.74rem; color:var(--text-lighter); }
+    .edu-status {
+      font-size:0.68rem; font-weight:700;
+      padding:2px 9px; border-radius:100px;
+    }
+    .edu-status.cursando { background:var(--blue-bg); color:var(--blue); }
+    .edu-status.concluido { background:var(--green-bg); color:var(--green); }
+
+    /* ── CERTS ── */
+    .cert-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+    .cert-card {
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:12px; padding:14px 10px;
+      text-align:center; transition:all 0.25s;
+    }
+    .cert-card:hover {
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px var(--accent-glow);
+      transform:translateY(-2px);
+    }
+    .cert-icon { font-size:1.1rem; color:var(--accent-dim); margin-bottom:7px; }
+    .cert-name { font-size:0.74rem; font-weight:600; color:var(--text); line-height:1.3; }
+
+    /* ── SKILL TAGS ── */
+    .skills-wrap { display:flex; flex-direction:column; gap:14px; }
+    .skill-group {
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:14px; padding:16px 18px;
+    }
+    .sg-title {
+      font-size:0.69rem; font-weight:700; text-transform:uppercase;
+      letter-spacing:1.8px; color:var(--text-lighter); margin-bottom:11px;
+    }
+    .tags { display:flex; flex-wrap:wrap; gap:7px; }
+    .tag {
+      display:inline-flex; align-items:center;
+      font-size:0.77rem; font-weight:500;
+      padding:4px 12px; border-radius:100px;
+      border:1px solid transparent;
+      transition:all 0.18s; cursor:default;
+    }
+    .tag:hover { transform:translateY(-1px); filter:brightness(1.06); }
+    .tag.green  { background:var(--green-bg);  color:#065f46; border-color:#a7f3d0; }
+    .tag.blue   { background:var(--blue-bg);   color:#1e40af; border-color:#bfdbfe; }
+    .tag.purple { background:var(--purple-bg); color:#5b21b6; border-color:#ddd6fe; }
+    .tag.orange { background:var(--orange-bg); color:#9a3412; border-color:#fed7aa; }
+    .tag.red    { background:var(--red-bg);    color:#991b1b; border-color:#fecaca; }
+    .tag.teal   { background:var(--teal-bg);   color:#115e59; border-color:#99f6e4; }
+
+    /* ── PDF BTN ── */
+    #pdf-btn {
+      position:fixed; top:22px; right:22px;
+      background:var(--dark); color:#fff;
+      border:1px solid rgba(79,195,247,0.28);
+      padding:10px 18px; border-radius:10px;
+      cursor:pointer; font-size:0.8rem; font-weight:600;
+      font-family:'Inter',sans-serif;
+      display:flex; align-items:center; gap:7px;
+      z-index:999;
+      box-shadow:0 4px 20px rgba(0,0,0,0.28);
+      transition:all 0.2s;
+    }
+    #pdf-btn:hover {
+      background:var(--dark-3); border-color:var(--accent);
+      box-shadow:0 0 0 3px var(--accent-glow), 0 4px 20px rgba(0,0,0,0.28);
+    }
+    #pdf-btn i { color:var(--accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width:640px) {
+      .hdr-inner { padding:28px 22px 24px; }
+      .hdr-name { font-size:1.9rem; }
+      .focus-grid { grid-template-columns:repeat(2,1fr); }
+      .edu-grid { grid-template-columns:1fr; }
+      .cert-grid { grid-template-columns:repeat(2,1fr); }
+      .timeline { padding-left:22px; }
+      #pdf-btn { top:12px; right:12px; padding:8px 14px; font-size:0.75rem; }
+    }
+    @page {
+      size: A4;
+      margin: 12mm 14mm;
+    }
+
+    @media print {
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      body { background: #fff !important; }
+      .anim { opacity:1 !important; transform:none !important; }
+      #pdf-btn { display:none !important; }
+      .page { max-width:100% !important; padding:0 !important; margin:0 !important; }
+
+      .header { border-radius:0 !important; box-shadow:none !important; background:#0b1520 !important; margin-bottom:16px !important; page-break-inside:avoid; }
+      .hdr-grid, .hdr-glow, .hdr-glow2 { display:none !important; }
+      .hdr-inner { padding:24px 28px 20px !important; }
+      .hdr-name { font-size:2rem !important; }
+      .hdr-badges { margin-top:14px !important; gap:6px !important; }
+      .hdr-badge { padding:4px 10px !important; font-size:0.7rem !important; border:1px solid rgba(79,195,247,0.4) !important; background:rgba(79,195,247,0.08) !important; }
+      .hdr-divider { margin:16px 0 14px !important; }
+      .contact-item { font-size:0.76rem !important; }
+
+      .section { margin-bottom:16px !important; }
+      .sec-hdr { margin-bottom:10px !important; }
+      .sec-icon { background:#0b1520 !important; }
+
+      .summary-card { padding:14px 16px !important; border:1px solid #cbd5e1 !important; border-radius:8px !important; }
+      .summary-card p { font-size:0.82rem !important; line-height:1.65 !important; }
+      .summary-card::before { background:#29b6f6 !important; }
+
+      .focus-grid { gap:8px !important; }
+      .focus-card { padding:12px 8px !important; border:1px solid #cbd5e1 !important; border-radius:8px !important; }
+      .focus-label { font-size:0.7rem !important; }
+
+      .timeline { padding-left:22px !important; }
+      .timeline::before { background:#29b6f6 !important; }
+      .tl-item { margin-bottom:14px !important; page-break-inside:avoid; }
+      .tl-card { padding:14px 16px !important; border:1px solid #cbd5e1 !important; border-radius:8px !important; }
+      .tl-item.active .tl-card { border-color:rgba(79,195,247,0.4) !important; background:rgba(79,195,247,0.03) !important; }
+      .tl-item.active .tl-dot { background:#29b6f6 !important; border-color:#29b6f6 !important; box-shadow:none !important; }
+      .job-title { font-size:0.88rem !important; }
+      .job-desc { font-size:0.78rem !important; margin:8px 0 !important; padding-bottom:8px !important; }
+      .achievements li { font-size:0.76rem !important; line-height:1.5 !important; }
+      .achievements li::before { background:#29b6f6 !important; opacity:0.8 !important; }
+      .period-pill { font-size:0.68rem !important; border:1px solid #cbd5e1 !important; background:#f8fafc !important; }
+      .badge-current { background:#d1fae5 !important; color:#065f46 !important; }
+      .badge-current::before { animation:none !important; background:#10b981 !important; }
+
+      .edu-grid { gap:8px !important; }
+      .edu-card { padding:12px 14px !important; border:1px solid #cbd5e1 !important; border-radius:8px !important; }
+      .edu-status.cursando { background:#dbeafe !important; color:#1e40af !important; }
+      .edu-status.concluido { background:#d1fae5 !important; color:#065f46 !important; }
+
+      .cert-grid { gap:8px !important; }
+      .cert-card { padding:10px 8px !important; border:1px solid #cbd5e1 !important; border-radius:8px !important; }
+      .cert-name { font-size:0.7rem !important; }
+
+      .skills-wrap { gap:8px !important; }
+      .skill-group { padding:10px 14px !important; border:1px solid #cbd5e1 !important; border-radius:8px !important; page-break-inside:avoid; }
+      .tags { gap:5px !important; }
+      .tag { font-size:0.7rem !important; padding:2px 9px !important; }
+      .tag.green  { background:#d1fae5 !important; color:#065f46 !important; border-color:#a7f3d0 !important; }
+      .tag.blue   { background:#dbeafe !important; color:#1e40af !important; border-color:#bfdbfe !important; }
+      .tag.purple { background:#ede9fe !important; color:#5b21b6 !important; border-color:#ddd6fe !important; }
+      .tag.orange { background:#ffedd5 !important; color:#9a3412 !important; border-color:#fed7aa !important; }
+      .tag.red    { background:#fee2e2 !important; color:#991b1b !important; border-color:#fecaca !important; }
+      .tag.teal   { background:#ccfbf1 !important; color:#115e59 !important; border-color:#99f6e4 !important; }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="resume-container">
-        <div class="header">
-            <h1>Fernando Wegner</h1>
-            <div class="title">QA Analyst | Automação & Performance</div>
-            <div class="contact">
-                <div><i class="fa-solid fa-envelope"></i> wegnernando@gmail.com</div>
-                <div><i class="fa-brands fa-linkedin"></i> linkedin.com/in/fernando-wegner-186235191</div>
-                <div><i class="fa-solid fa-location-dot"></i> Curitiba, Brasil</div>
-                <div><i class="fa-solid fa-phone"></i> (41) 98506-6318</div>
-            </div>
-        </div>
+<button id="pdf-btn" onclick="window.print()">
+  <i class="fa-solid fa-file-arrow-down"></i> Baixar PDF
+</button>
 
-        <div class="content">
-            <div class="section">
-                <h2 class="section-title"><i class="fa-solid fa-user-tie"></i> Resumo Profissional</h2>
-                <div class="summary">
-                    <p>Analista de Qualidade de Software com sólida experiência em garantir a excelência de produtos, atualmente QA Engineer na UEX Tecnologia. Anteriormente QA Pleno na Acom Sistemas e Vivensis, onde foi responsável por aplicar técnicas avançadas de testes manuais e automatizados, desde a análise de requisitos até a validação final.</p>
-                    <p>Especialista na automação de testes ponta a ponta, análise de performance e testes de carga e estresse. Atuação inclui a integração de práticas de qualidade em pipelines de CI/CD e o monitoramento de ambientes em produção, sempre com foco na melhoria contínua e em entregas de alto valor.</p>
-                </div>
-            </div>
+<div class="page">
 
-            <div class="section">
-                <div class="metrics">
-                    <h4>Principais Focos de Atuação</h4>
-                    <div class="metrics-grid">
-                        <div class="metric-item">
-                            <div class="metric-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                            <div class="metric-label">Segurança & Pentest</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-icon"><i class="fa-solid fa-robot"></i></div>
-                            <div class="metric-label">Automação (Web & Mobile)</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-icon"><i class="fa-solid fa-code-branch"></i></div>
-                            <div class="metric-label">CI/CD & DevOps</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-icon"><i class="fa-solid fa-chart-line"></i></div>
-                            <div class="metric-label">Performance & Monitoramento</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- HEADER -->
+  <div class="header anim">
+    <div class="hdr-grid"></div>
+    <div class="hdr-glow"></div>
+    <div class="hdr-glow2"></div>
+    <div class="hdr-inner">
+      <div class="hdr-eyebrow">QA Engineer &amp; Automação</div>
+      <div class="hdr-name">Fernando <span>Wegner</span></div>
+      <div class="hdr-subtitle">Qualidade de Software · Testes · CI/CD · Segurança</div>
 
-            <div class="section">
-                <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Experiência Profissional</h2>
+      <div class="hdr-badges">
+        <div class="hdr-badge"><i class="fa-solid fa-shield-halved"></i> Pentest &amp; Segurança</div>
+        <div class="hdr-badge"><i class="fa-solid fa-robot"></i> Automação Web &amp; Mobile</div>
+        <div class="hdr-badge"><i class="fa-solid fa-code-branch"></i> CI/CD &amp; DevOps</div>
+        <div class="hdr-badge"><i class="fa-solid fa-chart-line"></i> Performance &amp; Monitoring</div>
+      </div>
 
-                <!-- NOVA EMPRESA -->
-                <div class="experience-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">QA Engineer <span class="badge-new">Atual</span></div>
-                            <div class="company">UEX Tecnologia · Tempo integral</div>
-                        </div>
-                        <div class="period">Jan 2026 - o momento</div>
-                    </div>
-                    <div class="description">
-                        Atuação sênior na engenharia de qualidade, liderando iniciativas estratégicas de automação, cobertura de testes e governança de qualidade em produtos de alto impacto.
-                    </div>
-                    <ul class="achievements">
-                        <li>Liderança técnica no mapeamento e implementação de novas features, atuando desde a análise de requisitos e regras de negócio até a validação em produção.</li>
-                        <li>Implementação e evolução de suítes de testes automatizados utilizando o framework PEST PHP, garantindo cobertura robusta em aplicações back-end.</li>
-                        <li>Aplicação de Contract Testing com PACT para validação de contratos entre microsserviços, garantindo consistência nas integrações entre consumidores e provedores.</li>
-                        <li>Monitoramento e análise de cobertura de testes, identificando gaps críticos e propondo estratégias de expansão alinhadas às metas de qualidade do produto.</li>
-                        <li>Colaboração direta com liderança técnica e de produto na definição de critérios de aceite, DoD (Definition of Done) e estratégias de teste por sprint.</li>
-                        <li>Participação ativa em cerimônias ágeis (refinamento, planning, review e retrospectiva), contribuindo com uma visão orientada à qualidade em todo o ciclo de desenvolvimento.</li>
-                        <li>Revisão e fortalecimento de processos de QA no pipeline de CI/CD, assegurando execução automática de testes a cada deploy e reduzindo regressões em produção.</li>
-                        <li>Disseminação de cultura de qualidade no time, realizando code reviews orientados a testes, workshops internos e documentação de boas práticas.</li>
-                        <li>Análise e rastreabilidade de bugs críticos, priorizando junto ao time de engenharia a resolução com base em impacto no negócio.</li>
-                    </ul>
-                </div>
+      <div class="hdr-divider"></div>
 
-                <div class="experience-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">QA Pleno</div>
-                            <div class="company">Acom Sistemas</div>
-                        </div>
-                        <div class="period">Fev 2025 - Dez 2025</div>
-                    </div>
-                    <div class="description">
-                        Assegurando a qualidade de sistemas desktop e web por meio de testes manuais e automatizados em projetos nos setores de food, fiscal e logístico.
-                    </div>
-                    <ul class="achievements">
-                        <li>Automação de aplicações desktop (Delphi) com TestComplete.</li>
-                        <li>Automação de plataformas web com Cypress.</li>
-                        <li>Validação de APIs utilizando Postman para garantir integrações.</li>
-                        <li>Criação de documentações minuciosas para padronização dos fluxos de software.</li>
-                        <li>Atuação em metodologias ágeis, participando de sprints e processos de atualização.</li>
-                        <li>Gestão de testes e issues em Jira e Azure (esteira de testes).</li>
-                        <li>Condução de verificações em banco de dados Mysql para validar a lógica do projeto.</li>
-                    </ul>
-                </div>
+      <div class="hdr-contact">
+        <div class="contact-item"><i class="fa-solid fa-envelope"></i> wegnernando@gmail.com</div>
+        <div class="contact-item"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/fernando-wegner-186235191</div>
+        <div class="contact-item"><i class="fa-solid fa-location-dot"></i> Curitiba, Brasil</div>
+        <div class="contact-item"><i class="fa-solid fa-phone"></i> (41) 98506-6318</div>
+      </div>
+    </div>
+  </div>
 
-                <div class="experience-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">QA Pleno</div>
-                            <div class="company">Vivensis</div>
-                        </div>
-                        <div class="period">Mai 2024 - Fev 2025</div>
-                    </div>
-                    <div class="description">
-                        Responsável por garantir a qualidade dos produtos por meio de análises abrangentes, combinando testes manuais e automatizados.
-                    </div>
-                    <ul class="achievements">
-                        <li>Execução de planos de teste para funcionalidade, utilizando Postman (API) e Cypress (E2E).</li>
-                        <li>Realização de testes de penetração e análise de vulnerabilidades com Kali Linux, Burp Suite e Frida.</li>
-                        <li>Integração de práticas de segurança ao pipeline de CI/CD com Jenkins.</li>
-                        <li>Monitoramento e análise de desempenho em produção com Grafana e Zabbix.</li>
-                        <li>Testes de API e integração com Swagger e testes de aplicativos móveis com Appium.</li>
-                        <li>Criação e modificação de scripts de teste com TypeScript, JavaScript e Java.</li>
-                    </ul>
-                </div>
+  <!-- RESUMO -->
+  <div class="section anim">
+    <div class="sec-hdr">
+      <div class="sec-icon"><i class="fa-solid fa-user"></i></div>
+      <div class="sec-title">Resumo Profissional</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="summary-card">
+      <p>Analista de Qualidade de Software com sólida experiência em garantir a excelência de produtos, atualmente QA Engineer na UEX Tecnologia. Anteriormente QA Pleno na Acom Sistemas e Vivensis, responsável por aplicar técnicas avançadas de testes manuais e automatizados, desde a análise de requisitos até a validação final.</p>
+      <p>Especialista na automação de testes ponta a ponta, análise de performance e testes de carga e estresse. Atuação inclui a integração de práticas de qualidade em pipelines de CI/CD e o monitoramento de ambientes em produção, sempre com foco em melhoria contínua e entregas de alto valor.</p>
+    </div>
+  </div>
 
-                <div class="experience-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">Mid-level Systems Analyst</div>
-                            <div class="company">Nox Automação</div>
-                        </div>
-                        <div class="period">Mai 2022 - Dez 2023</div>
-                    </div>
-                    <ul class="achievements">
-                        <li>Condução de testes manuais em colaboração com clientes finais para identificação e resolução de bugs.</li>
-                        <li>Utilização de bancos de dados (SQL) para corrigir bugs no lado do cliente.</li>
-                        <li>Design e personalização de sites para clientes finais na plataforma Nopcommerce.</li>
-                        <li>Documentação de procedimentos de desenvolvimento e registros de mudanças.</li>
-                        <li>Aplicação de metodologias ágeis para gerenciar backlogs e relatórios de bugs.</li>
-                        <li>Atuação com SQL, Delphi, DataSnap, Stored Procedure, C# e Nopcommerce.</li>
-                    </ul>
-                </div>
+  <!-- FOCOS -->
+  <div class="section anim">
+    <div class="focus-grid">
+      <div class="focus-card">
+        <div class="focus-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="focus-label">Segurança &amp; Pentest</div>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon"><i class="fa-solid fa-robot"></i></div>
+        <div class="focus-label">Automação Web &amp; Mobile</div>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon"><i class="fa-solid fa-code-branch"></i></div>
+        <div class="focus-label">CI/CD &amp; DevOps</div>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="focus-label">Performance &amp; Monitoramento</div>
+      </div>
+    </div>
+  </div>
 
-                <div class="experience-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">Technical Support and Help-Desk Specialist</div>
-                            <div class="company">Escriba</div>
-                        </div>
-                        <div class="period">Dez 2022 - Mar 2023</div>
-                    </div>
-                    <ul class="achievements">
-                        <li>Utilização de SQL Server para atualizações e ajustes no servidor local do cliente.</li>
-                        <li>Atuação com sistemas para cartórios extrajudiciais, repassando mudanças do TJ.</li>
-                        <li>Monitoramento e verificação do sistema após atualizações.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Formação Acadêmica</h2>
-
-                <div class="education-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">Pós-graduação em Cloud Computing</div>
-                            <div class="company">Unama</div>
-                        </div>
-                        <div class="period">2025 - 2026</div>
-                    </div>
-                    <div class="description">Cursando</div>
-                </div>
-
-                <div class="education-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">Tecnólogo em Análise e Desenvolvimento de Sistemas</div>
-                            <div class="company">UniCesumar</div>
-                        </div>
-                        <div class="period">2021 - 2024</div>
-                    </div>
-                    <div class="description">Concluído</div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title"><i class="fa-solid fa-award"></i> Certificações</h2>
-                <div class="certifications">
-                    <div class="cert-item"><h4>Git & Github</h4></div>
-                    <div class="cert-item"><h4>Lógica de Programação</h4></div>
-                    <div class="cert-item"><h4>Cypress</h4></div>
-                    <div class="cert-item"><h4>MultiCloud, DevOps e IA</h4></div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title"><i class="fa-solid fa-code"></i> Competências Técnicas</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Automação & Testes E2E</h4>
-                        <ul>
-                            <li>Cypress</li>
-                            <li>TestComplete</li>
-                            <li>Appium</li>
-                            <li>Playwright</li>
-                            <li>PEST PHP</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Testes de API & Performance</h4>
-                        <ul>
-                            <li>Postman</li>
-                            <li>JMeter</li>
-                            <li>K6</li>
-                            <li>Swagger</li>
-                            <li>SoapUI</li>
-                            <li>PACT (Contract Testing)</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Segurança & Pentest</h4>
-                        <ul>
-                            <li>Teste de penetração</li>
-                            <li>Kali Linux</li>
-                            <li>Burp Suite</li>
-                            <li>Frida</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>CI/CD, DevOps & Monitoramento</h4>
-                        <ul>
-                            <li>Jenkins</li>
-                            <li>Azure</li>
-                            <li>Docker</li>
-                            <li>Grafana</li>
-                            <li>Zabbix</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Linguagens & Banco de Dados</h4>
-                        <ul>
-                            <li>Delphi</li>
-                            <li>Python</li>
-                            <li>JavaScript</li>
-                            <li>TypeScript</li>
-                            <li>Java</li>
-                            <li>PHP</li>
-                            <li>SQL / MySQL</li>
-                            <li>PostgreSQL</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Ferramentas & Outras Techs</h4>
-                        <ul>
-                            <li>Jira</li>
-                            <li>Metodologias Ágeis</li>
-                            <li>Nopcommerce</li>
-                            <li>Contract Testing</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- EXPERIÊNCIA -->
+  <div class="section anim">
+    <div class="sec-hdr">
+      <div class="sec-icon"><i class="fa-solid fa-briefcase"></i></div>
+      <div class="sec-title">Experiência Profissional</div>
+      <div class="sec-line"></div>
     </div>
 
-    <script>
-        function generatePDF() { window.print(); }
-        document.addEventListener('DOMContentLoaded', function() {
-            const button = document.createElement('button');
-            button.id = 'download-pdf-btn';
-            button.innerHTML = '<i class="fa-solid fa-file-arrow-down"></i> Baixar PDF';
-            button.style.cssText = `
-                position: fixed; top: 20px; right: 20px;
-                background: #2c5364; color: white; border: none;
-                padding: 12px 20px; border-radius: 8px; cursor: pointer;
-                font-size: 14px; font-weight: 600;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 1000;
-                display: flex; align-items: center; gap: 8px;
-                font-family: 'Segoe UI', Arial, sans-serif;
-            `;
-            button.onclick = generatePDF;
-            document.body.appendChild(button);
-        });
-    </script>
-</body>
-</html>
+    <div class="timeline">
+
+      <div class="tl-item active">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div>
+              <div class="job-title">QA Engineer <span class="badge-current">Atual</span></div>
+              <div class="company-name">UEX Tecnologia · Tempo integral</div>
+            </div>
+            <div class="period-pill">Jan 2026 — presente</div>
+          </div>
+          <div class="job-desc">Atuação sênior na engenharia de qualidade, liderando iniciativas estratégicas de automação, cobertura de testes e governança de qualidade em produtos de alto impacto.</div>
+          <ul class="achievements">
+            <li>Liderança técnica no mapeamento e implementação de novas features, desde análise de requisitos e regras de negócio até validação em produção.</li>
+            <li>Implementação e evolução de suítes automatizadas com PEST PHP, garantindo cobertura robusta em aplicações back-end.</li>
+            <li>Contract Testing com PACT para validação de contratos entre microsserviços e consistência nas integrações.</li>
+            <li>Monitoramento de cobertura de testes, identificando gaps críticos e propondo estratégias alinhadas às metas de qualidade.</li>
+            <li>Colaboração direta com liderança na definição de critérios de aceite, DoD e estratégias de teste por sprint.</li>
+            <li>Revisão e fortalecimento do pipeline de CI/CD, assegurando execução automática de testes a cada deploy.</li>
+            <li>Disseminação de cultura de qualidade via code reviews, workshops internos e documentação de boas práticas.</li>
+            <li>Análise e rastreabilidade de bugs críticos, priorizando resoluções por impacto no negócio.</li>
+            <li>Testes de segurança com Burp Suite seguindo a metodologia OWASP, identificando e validando vulnerabilidades nas aplicações de forma estruturada.</li>
+            <li>Utilização do HexStrike para testes de segurança éticos no sistema, com foco na detecção de flags e possíveis falhas críticas de infraestrutura e aplicação.</li>
+            <li>Uso estratégico de IA como apoio na análise de cobertura, geração de cenários de teste e identificação de padrões de falha, elevando a eficiência e profundidade das validações.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div>
+              <div class="job-title">QA Pleno</div>
+              <div class="company-name">Acom Sistemas</div>
+            </div>
+            <div class="period-pill">Fev 2025 — Dez 2025</div>
+          </div>
+          <div class="job-desc">Qualidade de sistemas desktop e web por meio de testes manuais e automatizados em projetos dos setores de food, fiscal e logístico.</div>
+          <ul class="achievements">
+            <li>Automação de aplicações desktop (Delphi) com TestComplete.</li>
+            <li>Automação de plataformas web com Cypress.</li>
+            <li>Validação de APIs com Postman para garantir integrações.</li>
+            <li>Criação de documentações para padronização dos fluxos de software.</li>
+            <li>Gestão de testes e issues em Jira e Azure (esteira de testes).</li>
+            <li>Verificações em banco de dados MySQL para validar a lógica do projeto.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div>
+              <div class="job-title">QA Pleno</div>
+              <div class="company-name">Vivensis</div>
+            </div>
+            <div class="period-pill">Mai 2024 — Fev 2025</div>
+          </div>
+          <div class="job-desc">Garantia da qualidade dos produtos combinando testes manuais, automatizados e de segurança em análises abrangentes.</div>
+          <ul class="achievements">
+            <li>Execução de planos de teste com Postman (API) e Cypress (E2E).</li>
+            <li>Testes de penetração e análise de vulnerabilidades com Kali Linux, Burp Suite e Frida.</li>
+            <li>Integração de práticas de segurança ao pipeline de CI/CD com Jenkins.</li>
+            <li>Monitoramento de desempenho em produção com Grafana e Zabbix.</li>
+            <li>Testes mobile com Appium e integração de APIs via Swagger.</li>
+            <li>Criação de scripts de teste com TypeScript, JavaScript e Java.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div>
+              <div class="job-title">Mid-level Systems Analyst</div>
+              <div class="company-name">Nox Automação</div>
+            </div>
+            <div class="period-pill">Mai 2022 — Dez 2023</div>
+          </div>
+          <ul class="achievements">
+            <li>Testes manuais com clientes finais para identificação e resolução de bugs.</li>
+            <li>SQL para correção de bugs no lado do cliente.</li>
+            <li>Design e personalização de sites na plataforma Nopcommerce.</li>
+            <li>Documentação de procedimentos e registros de mudanças.</li>
+            <li>Atuação com Delphi, DataSnap, Stored Procedure e C#.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div>
+              <div class="job-title">Technical Support &amp; Help-Desk Specialist</div>
+              <div class="company-name">Escriba</div>
+            </div>
+            <div class="period-pill">Dez 2022 — Mar 2023</div>
+          </div>
+          <ul class="achievements">
+            <li>SQL Server para atualizações e ajustes no servidor local do cliente.</li>
+            <li>Sistemas para cartórios extrajudiciais, repassando mudanças do TJ.</li>
+            <li>Monitoramento e verificação do sistema após atualizações.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FORMAÇÃO -->
+  <div class="section anim">
+    <div class="sec-hdr">
+      <div class="sec-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+      <div class="sec-title">Formação Acadêmica</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-degree">Pós-graduação em Cloud Computing</div>
+        <div class="edu-school">Unama</div>
+        <div class="edu-foot">
+          <span class="edu-period">2025 – 2026</span>
+          <span class="edu-status cursando">Cursando</span>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Tecnólogo em Análise e Desenvolvimento de Sistemas</div>
+        <div class="edu-school">UniCesumar</div>
+        <div class="edu-foot">
+          <span class="edu-period">2021 – 2024</span>
+          <span class="edu-status concluido">Concluído</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICAÇÕES -->
+  <div class="section anim">
+    <div class="sec-hdr">
+      <div class="sec-icon"><i class="fa-solid fa-award"></i></div>
+      <div class="sec-title">Certificações</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-icon"><i class="fa-brands fa-git-alt"></i></div>
+        <div class="cert-name">Git &amp; Github</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><i class="fa-solid fa-code"></i></div>
+        <div class="cert-name">Lógica de Programação</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><i class="fa-solid fa-vial-circle-check"></i></div>
+        <div class="cert-name">Cypress</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><i class="fa-solid fa-cloud"></i></div>
+        <div class="cert-name">MultiCloud, DevOps e IA</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section anim">
+    <div class="sec-hdr">
+      <div class="sec-icon"><i class="fa-solid fa-layer-group"></i></div>
+      <div class="sec-title">Competências Técnicas</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="skills-wrap">
+
+      <div class="skill-group">
+        <div class="sg-title">Automação &amp; Testes E2E</div>
+        <div class="tags">
+          <span class="tag green">Cypress</span>
+          <span class="tag green">Playwright</span>
+          <span class="tag green">Appium</span>
+          <span class="tag green">TestComplete</span>
+          <span class="tag green">PEST PHP</span>
+          <span class="tag green">Selenium</span>
+          <span class="tag green">Cucumber</span>
+          <span class="tag green">Robot Framework</span>
+          <span class="tag green">Appium</span>
+          <span class="tag green">Ranorex</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-title">API, Performance &amp; Contract Testing</div>
+        <div class="tags">
+          <span class="tag blue">Postman</span>
+          <span class="tag blue">JMeter</span>
+          <span class="tag blue">K6</span>
+          <span class="tag blue">Swagger</span>
+          <span class="tag blue">SoapUI</span>
+          <span class="tag blue">PACT</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-title">Segurança &amp; Pentest</div>
+        <div class="tags">
+          <span class="tag red">Kali Linux</span>
+          <span class="tag red">Burp Suite</span>
+          <span class="tag red">Frida</span>
+          <span class="tag red">Teste de Penetração</span>
+          <span class="tag red">OWASP</span>
+          <span class="tag red">HexStrike</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-title">CI/CD, DevOps &amp; Monitoramento</div>
+        <div class="tags">
+          <span class="tag purple">Jenkins</span>
+          <span class="tag purple">Azure</span>
+          <span class="tag purple">Docker</span>
+          <span class="tag purple">Grafana</span>
+          <span class="tag purple">Zabbix</span>
+          <span class="tag purple">Jira</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-title">Linguagens &amp; Banco de Dados</div>
+        <div class="tags">
+          <span class="tag orange">JavaScript</span>
+          <span class="tag orange">TypeScript</span>
+          <span class="tag orange">Python</span>
+          <span class="tag orange">Java</span>
+          <span class="tag orange">PHP</span>
+          <span class="tag orange">Delphi</span>
+          <span class="tag orange">SQL / MySQL</span>
+          <span class="tag orange">PostgreSQL</span>
+          <span class="tag orange">MongoDB</span>
+          <span class="tag orange">SQLite</span>
+          
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-title">Metodologias &amp; Outras Techs</div>
+        <div class="tags">
+          <span class="tag teal">Metodologias Ágeis</span>
+          <span class="tag teal">Scrum / Kanban</span>
+          <span class="tag teal">Contract Testing</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Only animate if IntersectionObserver is supported
+  if ('IntersectionObserver' in window) {
+    const items = document.querySelectorAll('.anim');
+    // Mark as out (hidden) only after we know JS runs
+    items.forEach(el => el.classList.add('out'));
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.remove('out');
